@@ -8,7 +8,7 @@ def conv_to_kana(s):
         "sei": "セイ",
         "tei": "テイ",
         "nei": "ネイ",
-        "hei": "へイ",
+        "hei": "ヘイ",
         "mei": "メイ",
         "yei": "イェイ",
         "rei": "レイ",

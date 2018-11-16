@@ -9,7 +9,16 @@ test_strs = [
     ("ダメ",   "dame",  "deimei", "デイメイ"),
     ("酒",     "sake",  "seikei", "セイケイ"),
     ("うんち", "unchi", "eintei", "エインテイ"),
-    ("ほげ", "hoge", "heigei", "ヘイゲイ")
+    ("ほげ", "hoge", "heigei", "ヘイゲイ"),
+    ("どう", "dou", "deiei", "デイエイ"),
+    ("シャツ", "shatsu", "seitei", "セイテイ"),
+    ("ウーパールーパー", "u-pa-ru-pa-", "eipeireipei", "エイペイレイペイ"),
+    ("鼻血", "hanaji", "heineidei", "ヘイネイデイ"),
+    ("フレロビウム", "furerobiumu", "heireireibeieimei", "ヘイレイレイベイエイメイ"),
+    ("ジェイソン", "jieison", "jeieisein", "ジェイエイセイン"),
+    ("コンピュータ", "konpyu-ta", "keinpeitei", "ケインペイテイ"),
+    ("業務", "gyoumu", "geieimei", "ゲイエイメイ"),
+    ("般若", "hannya", "heinnei", "ヘインネイ"),
 ]
 
 

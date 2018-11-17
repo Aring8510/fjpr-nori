@@ -32,4 +32,7 @@ def conv_to_kana(s):
     s = re.sub("e", "エ", s)
     s = re.sub("n", "ン", s)
 
+    # 母音 + n の区切り文字 ' を削除
+    s = re.sub("'", "", s)
+
     return s

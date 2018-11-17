@@ -21,6 +21,8 @@ test_strs = [
     ("業務", "gyoumu", "geieimei", "ゲイエイメイ"),
     ("般若", "hannya", "heinnei", "ヘインネイ"),
     ("さっき", "sakki", "seikei", "セイケイ"),
+    ("アイアイ", "aiai", "eiei", "エイエイ"),
+    ("本案", "hon'an", "hein'ein", "ヘインエイン"),
 ]
 
 

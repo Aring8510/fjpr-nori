@@ -5,6 +5,7 @@ def conv_to_fjpr(s):
     print("原文 " + s)
     vowels = "[aiueo]"  # 母音
     cons = "[kstnhmyrwgzdbpvjf]"  # 子音
+    unit = f"{cons}?ei"  # 変換後のひとまとまり (ei または 子音 + ei)
 
     s = re.sub("-", "", s)   # 長音を消す
     s = re.sub("jie", "je", s)  # jie を je に変える (pykakasiはジェをjieにしてしまう)
@@ -25,15 +26,16 @@ def conv_to_fjpr(s):
     print("子音+母音変換 " + s)
 
     # 母音の連続を"ei"に変換
-    s = re.sub(f"({cons}){vowels}{vowels}", "\\1ei", s)
+    ptrn = f"(?:{unit})|(?:{vowels}{vowels})"
+    s = re.sub(f"({ptrn}){vowels}{vowels}", "\\1ei", s)
     s = re.sub(f"^{vowels}{vowels}", "ei", s)
     print("母音連続変換 " + s)
 
     # 孤立した母音を"ei"に変換
-    ptrn = f"{cons}|(?:{vowels}{vowels})"
-    s = re.sub(f"({ptrn}){vowels}({cons})", "\\1ei\\2", s)
+    ptrn = f"(?:{unit})|n|'"
+    s = re.sub(f"({ptrn}){vowels}({ptrn})", "\\1ei\\2", s)
     s = re.sub(f"({ptrn}){vowels}$", "\\1ei", s)
-    s = re.sub(f"^{vowels}({cons})", "ei\\1", s)
+    s = re.sub(f"^{vowels}({ptrn})", "ei\\1", s)
     print("孤立母音変換 " + s)
 
     return s

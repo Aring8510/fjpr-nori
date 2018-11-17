@@ -8,11 +8,9 @@ def conv_to_fjpr(s):
 
     s = re.sub("-", "", s)   # 長音を消す
     s = re.sub("jie", "je", s)  # jie を je に変える (pykakasiはジェをjieにしてしまう)
-    s = re.sub("shie", "se", s)  # shie を se に変える (pykakasiはシェをsieにしてしまう)
-    s = re.sub("kiy", "ku", s)  # kiy を ku に変える
-    s = re.sub("ch", "t", s)  # ch を t に変える
-    s = re.sub("ts", "t", s)  # ts を t に変える
-    s = re.sub("sh", "s", s)  # sh を s に変える
+    s = re.sub("ch", "t", s)  # ch を t に変える (どちらもテイになる)
+    s = re.sub("ts", "t", s)  # ts を t に変える (どちらもテイになる)
+    s = re.sub("sh", "s", s)  # sh を s に変える (どちらもセイになる)
     s = re.sub("ji", "di", s)  # ji を di に変える (どちらもデイになる)
     s = re.sub("fu", "hu", s)  # fu を hu に変える (どちらもヘイになる)
     s = re.sub(f"({cons})y", "\\1", s)  # 子音 + y を子音に変える

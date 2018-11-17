@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import unittest
 import jtor
 import rtof
@@ -19,6 +20,7 @@ test_strs = [
     ("コンピュータ", "konpyu-ta", "keinpeitei", "ケインペイテイ"),
     ("業務", "gyoumu", "geieimei", "ゲイエイメイ"),
     ("般若", "hannya", "heinnei", "ヘインネイ"),
+    ("さっき", "sakki", "seikei", "セイケイ"),
 ]
 
 

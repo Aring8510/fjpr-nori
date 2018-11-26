@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 import os
 import re
 from trans import norify
@@ -14,6 +13,7 @@ slack_events_adapter = SlackEventAdapter(
 slack_bot_token = os.environ["SLACK_BOT_TOKEN"]
 sc = SlackClient(slack_bot_token)
 
+incoming_port = os.environ["INCOMING_PORT"]
 
 # メンションが飛んできたときだけ対応する
 @slack_events_adapter.on("app_mention")
@@ -50,5 +50,5 @@ def app_mention(event_data):
         print("[INFO] The message has sent successfully")
 
 
-# Start the server on port 3000
-slack_events_adapter.start(port=3000)
+# Start the server on specified port
+slack_events_adapter.start(port=incoming_port)

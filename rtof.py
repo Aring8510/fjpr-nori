@@ -22,7 +22,11 @@ def conv_to_fjpr(s):
 
     # 孤立した母音を"ei"に変換
     ptrn = f"(?:{unit})|n|'"
-    s = re.sub(f"({ptrn}){vowels}({ptrn})", "\\1ei\\2", s)
+    while True:
+        s2 = re.sub(f"({ptrn}){vowels}({ptrn})", "\\1ei\\2", s)
+        if s == s2:
+            break
+        s = s2
     s = re.sub(f"({ptrn}){vowels}$", "\\1ei", s)
     s = re.sub(f"^{vowels}({ptrn})", "ei\\1", s)
     #print("RTOF 孤立母音変換 " + s)

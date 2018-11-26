@@ -25,6 +25,6 @@ if __name__ == '__main__':
     try:
         while True:
             s = input('> ')
-            norify(s)
+            print(norify(s))
     except (EOFError, KeyboardInterrupt):
         print("\nQuitting...")

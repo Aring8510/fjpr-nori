@@ -1,1 +1,1 @@
-web: python3 slack.py
+worker: python3 slack.py

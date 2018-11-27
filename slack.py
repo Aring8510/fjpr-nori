@@ -51,4 +51,4 @@ def app_mention(event_data):
 
 
 # Start the server on specified port
-slack_events_adapter.start(port=port)
+slack_events_adapter.start(host='0.0.0.0', port=port)

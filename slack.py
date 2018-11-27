@@ -38,7 +38,7 @@ def app_mention(event_data):
     if len(msg_recv) > msg_len_limit:
         print("[INFO] The message received is too long")
         print("[INFO] Replacing the message with a error message")
-        msg_send = norify("メッセージが長すぎます(1000文字まで)")
+        msg_send = norify("メッセージ長すぎ(1000文字まで)")
         msg_send = ":no_entry: " + msg_send + " :no_entry:"
     else:
         print(f"[INFO] Message received: {msg_recv}")

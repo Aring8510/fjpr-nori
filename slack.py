@@ -33,7 +33,10 @@ def app_mention(event_data):
     msg_recv = event["text"]
     print(f"Message received: {msg_recv}")
 
-    msg_send = norify(re.sub("<.*> ", "", msg_recv))
+    # メンションを削除
+    msg_san = re.sub("<.*>", "", msg_recv)
+
+    msg_send = norify(msg_san)
     print(f"Message to send: {msg_send}")
 
     chan = event["channel"]

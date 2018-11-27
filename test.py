@@ -25,7 +25,8 @@ test_strs = [
     ("本案", "ho'n'a'n'", "hei'n'ei'n'", "ヘインエイン"),
     ("ウィキペディア", "wikipedia", "weikeipeideiei", "ウェイケイペイデイエイ"),
     ("ヴァーチャル", "bataru", "beiteirei", "ベイテイレイ"),
-    ("空海さ", "kuukaisa", "keieikeieisei", "ケイエイケイエイセイ")
+    ("空海さ", "kuukaisa", "keieikeieisei", "ケイエイケイエイセイ"),
+    ("んをい", "'n''o'i", "'n'eiei", "ンエイエイ")
 ]
 
 

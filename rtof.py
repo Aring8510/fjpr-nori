@@ -20,6 +20,9 @@ def conv_to_fjpr(s):
     s = re.sub(f"^{vowels}{vowels}", "ei", s)
     #print("RTOF 母音連続変換 " + s)
 
+    # 「を」を変換
+    s = re.sub("'o'", "ei", s)
+
     # 孤立した母音を"ei"に変換
     ptrn = f"(?:{unit})|n|'"
     while True:

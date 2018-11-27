@@ -34,18 +34,20 @@ def app_mention(event_data):
         return
 
     msg_recv = event["text"]
+    msg_send = ""
     if len(msg_recv) > msg_len_limit:
         print("[INFO] The message received is too long")
         print("[INFO] Replacing the message with a error message")
-        msg_recv = "メッセージが長すぎます(1000文字まで)"
+        msg_send = norify("メッセージが長すぎます(1000文字まで)")
+        msg_send = ":no_entry: " + msg_send + " :no_entry:"
     else:
         print(f"[INFO] Message received: {msg_recv}")
 
-    # メンションを削除
-    msg_san = re.sub("<.*>", "", msg_recv)
+        # メンションを削除
+        msg_san = re.sub("<.*>", "", msg_recv)
 
-    msg_send = norify(msg_san)
-    print(f"[INFO] Message to send: {msg_send}")
+        msg_send = norify(msg_san)
+        print(f"[INFO] Message to send: {msg_send}")
 
     chan = event["channel"]
     status = sc.api_call(

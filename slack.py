@@ -40,7 +40,8 @@ def app_mention(event_data):
     status = sc.api_call(
         "chat.postMessage",
         channel=chan,
-        text=msg_send
+        text=msg_send,
+        as_user=True
     )
     ok = status.get("ok")
     if not ok:

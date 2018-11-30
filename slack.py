@@ -3,24 +3,43 @@ import re
 from trans import norify
 from slackeventsapi import SlackEventAdapter
 from slackclient import SlackClient
+from collections import deque
 
+# イベントAPI用の設定
 slack_signing_secret = os.environ["SLACK_SIGNING_SECRET"]
 slack_events_adapter = SlackEventAdapter(
     slack_signing_secret,
     endpoint="/slack/events/"
 )
 
+# Slackクライアント用の設定
 slack_bot_token = os.environ["SLACK_BOT_TOKEN"]
 sc = SlackClient(slack_bot_token)
 
+# ポートの設定
 port = os.environ["PORT"]
 
+# 最大メッセージ長(超過したらエラーメッセージを返す)
 msg_len_limit = 1000
+
+# イベント履歴(同一メッセージがトリガーしたイベントは無視するようにする)
+# 区別にはイベントIDがあれば十分なのでそれだけ覚えておく
+event_hist = deque(maxlen=10)
 
 
 # メンションが飛んできたときだけ対応する
 @slack_events_adapter.on("app_mention")
 def app_mention(event_data):
+    # イベントIDを取得
+    event_id = event_data.get("event_id")
+
+    # すでに処理したイベントだったとき
+    if event_id in event_hist:
+        print("[INFO] Ignoring duplicates")
+        return
+
+    event_hist.append(event_id)
+
     event = event_data["event"]
 
     # 編集された場合もイベントが飛んでくるので無視する
@@ -28,7 +47,7 @@ def app_mention(event_data):
         print("[INFO] Ignoring the edited")
         return
 
-    # 他のボットに反応するとうるさいので無視する
+    # 自分や他のボットに反応するとうるさいので無視する
     if "bot_id" in event:
         print("[INFO] Ignoring a message of bots (including myself)")
         return

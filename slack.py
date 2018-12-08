@@ -63,7 +63,7 @@ def app_mention(event_data):
         print(f"[INFO] Message received: {msg_recv}")
 
         # メンションを削除
-        msg_san = re.sub("<.*>", "", msg_recv)
+        msg_san = re.sub(r"<.*>\s*", "", msg_recv)
 
         msg_send = norify(msg_san)
         print(f"[INFO] Message to send: {msg_send}")

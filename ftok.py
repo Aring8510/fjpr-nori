@@ -1,7 +1,17 @@
 import re
 
 
-def conv_to_kana(s):
+def conv_to_kana(ls):
+    ret = []
+    for item in ls:
+        s = item[0]
+        if item[1]:
+            s = fjpr_to_katakana(item[0])
+        ret.append(s)
+    return ''.join(ret)
+
+
+def fjpr_to_katakana(s):
     # 辞書
     d = {
         "kei": "ケイ",

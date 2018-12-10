@@ -1,7 +1,17 @@
 import re
 
 
-def conv_to_fjpr(s):
+def conv_to_fjpr(ls):
+    ret = []
+    for item in ls:
+        s = item[0]
+        if item[1]:
+            s = roman_to_fjpr(item[0])
+        ret.append([s, item[1]])
+    return ret
+
+
+def roman_to_fjpr(s):
     #print("RTOF 原文 " + s)
     vowels = "[aiueo]"  # 母音
     cons = "[kstnhmyrwgzdbpvjf]"  # 子音

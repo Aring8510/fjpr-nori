@@ -39,8 +39,12 @@ def fjpr_to_katakana(s):
 
     # ei, e, nは最後に変換
     s = re.sub("ei", "エイ", s)
-    s = re.sub("e", "エ", s)
+
     s = re.sub("n", "ン", s)
+
+    # 残された謎の母音はエイになってもらう
+    for v in ['a', 'i', 'u', 'e', 'o']:
+        s = re.sub(v, "エイ", s)
 
     # 母音 + n の区切り文字 ' を削除
     s = re.sub("'", "", s)

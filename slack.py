@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import os
 import re
 from trans import norify
@@ -24,7 +25,7 @@ msg_len_limit = 1000
 
 # イベント履歴(同一メッセージがトリガーしたイベントは無視するようにする)
 # 区別にはイベントIDがあれば十分なのでそれだけ覚えておく
-event_hist = deque(maxlen=10)
+event_hist = deque(maxlen=100)
 
 
 # メンションが飛んできたときだけ対応する
@@ -63,7 +64,7 @@ def app_mention(event_data):
         print(f"[INFO] Message received: {msg_recv}")
 
         # メンションを削除
-        msg_san = re.sub(r"<.*>\s*", "", msg_recv)
+        msg_san = re.sub(r"<@.+?>\s*", "", msg_recv)
 
         msg_send = norify(msg_san)
         print(f"[INFO] Message to send: {msg_send}")

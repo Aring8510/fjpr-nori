@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
+from collections import deque
+from slackeventsapi import SlackEventAdapter
+from trans import norify
 import os
 import re
-from trans import norify
-from slackeventsapi import SlackEventAdapter
-from slackclient import SlackClient
-from collections import deque
+import slack
 
 # イベントAPI用の設定
 slack_signing_secret = os.environ["SLACK_SIGNING_SECRET"]
@@ -15,7 +15,7 @@ slack_events_adapter = SlackEventAdapter(
 
 # Slackクライアント用の設定
 slack_bot_token = os.environ["SLACK_BOT_TOKEN"]
-sc = SlackClient(slack_bot_token)
+cl = slack.WebClient(slack_bot_token)
 
 # ポートの設定
 port = os.environ["PORT"]
@@ -70,8 +70,7 @@ def app_mention(event_data):
         print(f"[INFO] Message to send: {msg_send}")
 
     chan = event["channel"]
-    status = sc.api_call(
-        "chat.postMessage",
+    status = cl.chat_postMessage(
         channel=chan,
         text=msg_send,
         as_user=True

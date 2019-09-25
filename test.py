@@ -16,7 +16,7 @@ test_strs = [
     ("ウーパールーパー", [["uparupa", True]],     [["eipeireipei", True]],       "エイペイレイペイ"),
     ("鼻血",             [["hanadi", True]],      [["heineidei", True]],         "ヘイネイデイ"),
     ("フレロビウム",     [["hurerobiumu", True]], [["heireireibeieimei", True]], "ヘイレイレイベイエイメイ"),
-    ("ジェイソン",       [["jeiso'n'", True]],    [["jeieisei'n'", True]],       "ジェイエイセイン"),
+    ("ジェイソン",       [["jeiso'n'", True]],    [["jeisei'n'", True]],       "ジェイセイン"),
     ("コンピュータ",     [["ko'n'puta", True]],   [["kei'n'peitei", True]],      "ケインペイテイ"),
     ("業務",             [["goumu", True]],       [["geieimei", True]],          "ゲイエイメイ"),
     ("般若",             [["ha'n'na", True]],     [["hei'n'nei", True]],         "ヘインネイ"),

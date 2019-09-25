@@ -10,21 +10,24 @@ except ImportError:
 
 
 # 日本語 -> FJPR
-def norify(s):
-    print("原文 " + s)
+def norify(s, debug=False):
+    s_debug = f"原文: {s}\n"
     s1 = jtor.conv_to_roman(s)
-    print("ローマ字 " + str(s1))
+    s_debug += f"ローマ字: {s1}\n"
     s2 = rtof.conv_to_fjpr(s1)
-    print("FJPR " + str(s2))
+    s_debug += f"FJPR: {s2}\n"
     s3 = ftok.conv_to_kana(s2)
-    print("カナ " + str(s3))
-    return s3
+    s_debug += f"カナ: {s3}"
+    if debug:
+        return s_debug
+    else:
+        return s3
 
 
 if __name__ == '__main__':
     try:
         while True:
             s = input('> ')
-            print(norify(s))
+            print(norify(s, debug=True))
     except (EOFError, KeyboardInterrupt):
         print("\nQuitting...")

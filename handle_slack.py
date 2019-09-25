@@ -66,7 +66,13 @@ def app_mention(event_data):
         # メンションを削除
         msg_san = re.sub(r"<@.+?>\s*", "", msg_recv)
 
-        msg_send = norify(msg_san)
+        # デバッグモード
+        if "![debug]!" in msg_san:
+            msg_san = re.sub(r"!\[debug\]!", "", msg_san)
+            msg_send = norify(msg_san, debug=True)
+        else:
+            msg_send = norify(msg_san)
+
         print(f"[INFO] Message to send: {msg_send}")
 
     chan = event["channel"]

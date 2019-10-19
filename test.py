@@ -9,14 +9,14 @@ test_strs = [
     ("いいね",           [["iine", True]],        [["einei", True]],             "エイネイ"),
     ("ダメ",             [["dame", True]],        [["deimei", True]],            "デイメイ"),
     ("酒",               [["sake", True]],        [["seikei", True]],            "セイケイ"),
-    ("うんち",           [["u'n'ti", True]],      [["ei'n'tei", True]],          "エインテイ"),
+    ("うんち",           [["u'n'chi", True]],     [["ei'n'chei", True]],         "エインチェイ"),
     ("ほげ",             [["hoge", True]],        [["heigei", True]],            "ヘイゲイ"),
     ("どう",             [["dou", True]],         [["deiei", True]],             "デイエイ"),
     ("シャツ",           [["satu", True]],        [["seitei", True]],            "セイテイ"),
     ("ウーパールーパー", [["uparupa", True]],     [["eipeireipei", True]],       "エイペイレイペイ"),
     ("鼻血",             [["hanadi", True]],      [["heineidei", True]],         "ヘイネイデイ"),
     ("フレロビウム",     [["hurerobiumu", True]], [["heireireibeieimei", True]], "ヘイレイレイベイエイメイ"),
-    ("ジェイソン",       [["jeiso'n'", True]],    [["jeisei'n'", True]],       "ジェイセイン"),
+    ("ジェイソン",       [["jeiso'n'", True]],    [["jeisei'n'", True]],         "ジェイセイン"),
     ("コンピュータ",     [["ko'n'puta", True]],   [["kei'n'peitei", True]],      "ケインペイテイ"),
     ("業務",             [["goumu", True]],       [["geieimei", True]],          "ゲイエイメイ"),
     ("般若",             [["ha'n'na", True]],     [["hei'n'nei", True]],         "ヘインネイ"),
@@ -24,9 +24,10 @@ test_strs = [
     ("アイアイ",         [["aiai", True]],        [["eiei", True]],              "エイエイ"),
     ("本案",             [["ho'n'a'n'", True]],   [["hei'n'ei'n'", True]],       "ヘインエイン"),
     ("ウィキペディア",   [["wikipedia", True]],   [["weikeipeideiei", True]],    "ウェイケイペイデイエイ"),
-    ("ヴァーチャル",     [["bataru", True]],      [["beiteirei", True]],         "ベイテイレイ"),
+    ("ヴァーチャル",     [["bacharu", True]],     [["beicheirei", True]],        "ベイチェイレイ"),
     ("空海さ",           [["kuukaisa", True]],    [["keieikeieisei", True]],     "ケイエイケイエイセイ"),
-    ("んをい",           [["'n''o'i", True]],     [["'n'eiei", True]],           "ンエイエイ")
+    ("んをい",           [["'n''o'i", True]],     [["'n'eiei", True]],           "ンエイエイ"),
+    ("ちか",             [["chika", True]],       [["cheikei", True]],           "チェイケイ")
 ]
 
 

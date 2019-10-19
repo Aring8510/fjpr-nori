@@ -12,6 +12,9 @@ def conv_to_kana(ls):
 
 
 def fjpr_to_katakana(s):
+    d2 = {
+        "chei": "チェイ",
+    }
     # 辞書
     d = {
         "kei": "ケイ",
@@ -33,7 +36,11 @@ def fjpr_to_katakana(s):
         "fei": "フェイ",
     }
 
-    # 辞書を参照して変換
+    # 辞書を参照して変換(長い音)
+    for k, v in d2.items():
+        s = re.sub(k, v, s)
+
+    # 辞書を参照して変換(普通の音)
     for k, v in d.items():
         s = re.sub(k, v, s)
 

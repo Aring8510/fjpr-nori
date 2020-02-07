@@ -31,6 +31,18 @@ event_hist = deque(maxlen=100)
 # メンションが飛んできたときだけ対応する
 @slack_events_adapter.on("app_mention")
 def app_mention(event_data):
+    print("[INFO] Received mention")
+    handle_event(event_data)
+
+
+# メンションが飛んできたときだけ対応する
+@slack_events_adapter.on("message")
+def handle_dm(event_data):
+    print("[INFO] Received DM")
+    handle_event(event_data)
+
+
+def handle_event(event_data):
     # イベントIDを取得
     event_id = event_data.get("event_id")
 
